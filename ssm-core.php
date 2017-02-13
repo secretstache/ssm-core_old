@@ -129,6 +129,9 @@ function get_option( $option_name, $default = '' ) {
 
 function add_options_page() {
 
+    if ( ! current_theme_supports('ssm-admin-branding') && ! current_theme_supports('ssm-admin-branding') )
+      return;
+
     add_submenu_page(
     'options-general.php',
       'SSM Core', // page title

@@ -14,13 +14,18 @@ function ssm_core_settings() {
     register_setting( 'ssm-core-settings-group', 'ssm_core_login_logo_height' );
 
 
-    add_settings_section( 'ssm-core-agency-options', 'Agency Options', 'ssm_core_agency_options', 'ssm_core');
+    if ( current_theme_supports( 'ssm-admin-branding' ) ) {
+        add_settings_section( 'ssm-core-agency-options', 'Agency Options', 'ssm_core_agency_options', 'ssm_core');
+    }
 
     add_settings_field( 'ssm-core-agency-name', 'Agency Name', 'ssm_core_agency_name', 'ssm_core', 'ssm-core-agency-options' );
     add_settings_field( 'ssm-core-agency-url', 'Agency URL', 'ssm_core_agency_url', 'ssm_core', 'ssm-core-agency-options' );
     add_settings_field( 'ssm-core-login-logo', 'Login Logo', 'ssm_core_login_logo', 'ssm_core', 'ssm-core-agency-options' );
 
-    add_settings_section( 'ssm-core-acf-options', 'ACF Options', 'ssm_acf_options', 'ssm_core' );
+    
+    if ( current_theme_supports( 'ssm-acf' ) ) {
+        add_settings_section( 'ssm-core-acf-options', 'ACF Options', 'ssm_acf_options', 'ssm_core' );
+    }
 
     add_settings_field
     (
