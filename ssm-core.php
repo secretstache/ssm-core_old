@@ -4,7 +4,7 @@
  * The plugin bootstrap file
  *
  * @link              http://secretstache.com
- * @since             0.1.0
+ * @since             0.1.1
  * @package           SSM_Core
  *
  * @wordpress-plugin
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defining some Constants
  */
-define( 'SSMC_VERSION', '0.1.0' );
+define( 'SSMC_VERSION', '0.1.1' );
 define( 'SSMC_URL', trailingslashit ( plugin_dir_url( __FILE__ ) ) );
 define( 'SSMC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SSMC_MODULES_DIR', trailingslashit( SSMC_DIR . 'modules' ) );
