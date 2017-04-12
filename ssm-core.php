@@ -40,7 +40,7 @@ define( 'SSMC_ASSETS_URL', trailingslashit ( plugin_dir_url( __FILE__ ) . 'asset
  * Require Files
  */
 require SSMC_OPTIONS_DIR . 'function-options.php';
-
+require SSMC_DIR . 'lib/plugin_update_check.php';
 
 function load_admin_scripts( $hook ) {
 
@@ -143,3 +143,11 @@ function add_options_page() {
 
 }
 add_action('admin_menu', __NAMESPACE__ . '\\add_options_page', 99);
+
+// Kernl Support
+$MyUpdateChecker = new \PluginUpdateChecker_2_0 (
+    'https://kernl.us/api/v1/updates/57ab49c47f334ccf27b16476/',
+    __FILE__,
+    'ssm-core',
+    1
+);
