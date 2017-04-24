@@ -11,7 +11,7 @@
           var orientation;
           var defaultLogo = login_logo.url;
 
-          if ( ( origWidth / origHeight )  >= 2 ) {
+          if ( origWidth > origHeight ) {
               orientation = 'landscape';
               console.log(orientation);
           } else {
@@ -19,24 +19,34 @@
               console.log(orientation);
           }
 
-          if ( orientation == 'landscape' && origWidth > 230 ) {
-              width = 230;
-              height = width * origHeight / origWidth;
+          if ( orientation == 'landscape' && origWidth >= 230 ) {
+              w = 230;
+              width = w.toString() + 'px';
+              h = width * (origHeight / origWidth);
+              height = h.toString() + 'px';
+              //console.log('landscape > 230');
           } else if ( orientation == 'landscape' && origWidth < 230 ) {
-              width = origWidth;
-              height = origHeight;
-          } else if ( orientation == 'portrait' && origWidth > 50 ) {
-              width = 200;
-              height = width * origHeight / origWidth;
+              width = origWidth.toString() + 'px';
+              height = origHeight.toString() + 'px';
+              console.log('landscape < 230');
+          } else if ( orientation == 'portrait' && origWidth >= 50 ) {
+              w = 50;
+              width = w.toString() + 'px';
+              h = w * (origHeight / origWidth);
+              height = h.toString() + 'px';
+              // console.log( 'portrait > 50' );
+              // console.log( 'Original Height: ' + origHeight );
+              // console.log( 'Original Width: ' + origWidth );
+              // console.log( 'New Height: ' + height )
           } else if ( orientation == 'portrait' && origWidth < 50 ) {
-              width = OrigWidth;
-              height = origHeight;
+              width = origWidth.toString() + 'px';
+              height = origHeight.toString() + 'px';
+              console.log('portrait < 50');
           }
 
           $('#ssm-core-login-logo').attr('value', url);
           $('#logo-preview').attr('src', url);
-          $('#logo-preview').css('width', width+' px');
-          $('#logo-preview').css('height', height+' px');
+          $('#logo-preview').css({'width': width, 'height': height});
           $('#ssm-core-login-logo-width').attr('value', width);
           $('#ssm-core-login-logo-height').attr('value', height);
 
@@ -56,8 +66,7 @@
 
       $('#ssm-core-login-logo').attr('value', '');
       $('#logo-preview').attr('src', defaultLogo);
-      $('#logo-preview').css('width', '230px');
-      $('#logo-preview').css('height', 'auto');
+      $('#logo-preview').css({'width': '230px', 'height': 'auto'});
       $('#ssm-core-login-logo-width').attr('value', '');
       $('#ssm-core-login-logo-height').attr('value', '');
     }

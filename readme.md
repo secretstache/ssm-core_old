@@ -8,6 +8,6 @@
 
 `add_theme_support( 'ssm-admin-setup' );`
 
-`add_theme_support( 'ssm-foundation-nav-walker' );`
-
 `add_theme_support( 'ssm-helpers' );`
+
+`add_theme_support( 'ssm-dashboard-widgets' );`

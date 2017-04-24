@@ -34,8 +34,8 @@ function login_logo() {
 $defaultLogo = SSMC_ASSETS_URL . 'images/login-logo.png';
 
 $background_image =  get_option('ssm_core_login_logo') != NULL ? get_option('ssm_core_login_logo') : $defaultLogo;
-$height =  get_option('ssm_core_login_logo_height') != NULL ? get_option('ssm_core_login_logo_height') : '128';
-$width =  get_option('ssm_core_login_logo_width') != NULL ? get_option('ssm_core_login_logo_width') : '150';
+$height =  get_option('ssm_core_login_logo_height') != NULL ? get_option('ssm_core_login_logo_height') : '128px';
+$width =  get_option('ssm_core_login_logo_width') != NULL ? get_option('ssm_core_login_logo_width') : '150px';
 
     ?>
     <style type="text/css">
@@ -43,9 +43,9 @@ $width =  get_option('ssm_core_login_logo_width') != NULL ? get_option('ssm_core
             background-image: url(<?php echo $background_image; ?>) !important;
             background-repeat: no-repeat;
             background-size: cover;
-            height: <?php echo $height; ?>px;
+            height: <?php echo $height; ?>;
             margin-bottom: 15px;
-            width: <?php echo $width; ?>px;
+            width: <?php echo $width; ?>;
         }
     </style>
     <?php

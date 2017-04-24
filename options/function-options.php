@@ -62,7 +62,7 @@ function ssm_core_login_logo() {
     $height = get_option('ssm_core_login_logo_height') != NULL ? esc_attr( get_option('ssm_core_login_logo_height') ) : 'auto';
 
     echo '<div class="login-logo-wrap">';
-    echo '<img src="' . $loginLogo . '" id="logo-preview" class="login-logo" alt="Login Logo" style="height: ' . $height . 'px; width: ' . $width . 'px; "/>';
+    echo '<img src="' . $loginLogo . '" id="logo-preview" class="login-logo" alt="Login Logo" style="height: ' . $height . '; width: ' . $width . '; "/>';
     echo '<div class="media-buttons">';
     echo '<input type="button" id="upload-image-button" class="button button-secondary" value="Upload Logo" />';
     echo '<input type="button" id="remove-image-button" class="button button-secondary" value="Remove Logo" />';
