@@ -4,14 +4,14 @@
  * The plugin bootstrap file
  *
  * @link              http://secretstache.com
- * @since             0.2.2
+ * @since             0.1.0
  * @package           SSM_Core
  *
  * @wordpress-plugin
  * Plugin Name:       SSM Core
  * Plugin URI:        http://secretstache.com
  * Description:       A collection of very opinionated modules that set up SSM projects.
- * Version:           0.2.1
+ * Version:           0.2.3
  * Author:            Secret Stache Media
  * Author URI:        http://secretstache.com
  * License:           GPL-2.0+
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defining some Constants
  */
-define( 'SSMC_VERSION', '0.2.2' );
+define( 'SSMC_VERSION', '0.2.3' );
 define( 'SSMC_URL', trailingslashit ( plugin_dir_url( __FILE__ ) ) );
 define( 'SSMC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SSMC_MODULES_DIR', trailingslashit( SSMC_DIR . 'modules' ) );
