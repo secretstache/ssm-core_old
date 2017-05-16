@@ -141,27 +141,3 @@ function yoast_seo_metabox_priority() {
 }
 
 add_filter( 'wpseo_metabox_prio', __NAMESPACE__ . '\\yoast_seo_metabox_priority' );
-
-
-/**
- *  Enable SVG Uploads
- * @since 1.0.0
- */
-function enable_svg_uploads($arr = array() ) {
-  $arr['svg'] = 'image/svg+xml'; 
-  return $arr;
-}
-
-add_filter('upload_mimes', __NAMESPACE__ . '\\enable_svg_uploads');
-
-
-
-/**
- *  Display SVG Thumbnail
- * @since 1.0.0
- */
-function display_svg_thumbnail() {
-  echo '<style> svg, img[src*=".svg"] { width: 120px; height: 120px; } </style>';
-}
-
-add_action('admin_head', __NAMESPACE__ . '\\display_svg_thumbnail');

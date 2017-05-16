@@ -11,37 +11,37 @@
           var orientation;
           var defaultLogo = login_logo.url;
 
+          console.log( 'Width: ' + origWidth );
+          console.log( 'Height: ' + origHeight );
+
           if ( origWidth > origHeight ) {
               orientation = 'landscape';
-              console.log(orientation);
+              // console.log(orientation);
           } else {
               orientation = 'portrait';
-              console.log(orientation);
+              // console.log(orientation);
           }
 
-          if ( orientation == 'landscape' && origWidth >= 230 ) {
-              w = 230;
-              width = w.toString() + 'px';
-              h = width * (origHeight / origWidth);
-              height = h.toString() + 'px';
-              //console.log('landscape > 230');
-          } else if ( orientation == 'landscape' && origWidth < 230 ) {
-              width = origWidth.toString() + 'px';
-              height = origHeight.toString() + 'px';
-              console.log('landscape < 230');
-          } else if ( orientation == 'portrait' && origWidth >= 50 ) {
-              w = 50;
-              width = w.toString() + 'px';
+          if ( orientation == 'landscape' && origWidth >= 290 ) {
+              w = 290;
               h = w * (origHeight / origWidth);
+              width = w.toString() + 'px';
               height = h.toString() + 'px';
-              // console.log( 'portrait > 50' );
-              // console.log( 'Original Height: ' + origHeight );
-              // console.log( 'Original Width: ' + origWidth );
-              // console.log( 'New Height: ' + height )
-          } else if ( orientation == 'portrait' && origWidth < 50 ) {
+              // console.log('landscape > 290');
+          } else if ( orientation == 'landscape' && origWidth < 290 ) {
               width = origWidth.toString() + 'px';
               height = origHeight.toString() + 'px';
-              console.log('portrait < 50');
+              // console.log('landscape < 290');
+          } else if ( orientation == 'portrait' && origWidth >= 125 ) {
+              w = 125;
+              h = w * (origHeight / origWidth);
+              width = w.toString() + 'px';
+              height = h.toString() + 'px';
+              // console.log( 'portrait > 125' );
+          } else if ( orientation == 'portrait' && origWidth < 125 ) {
+              width = origWidth.toString() + 'px';
+              height = origHeight.toString() + 'px';
+              // console.log('portrait < 125');
           }
 
           $('#ssm-core-login-logo').attr('value', url);

@@ -2,5 +2,6 @@
   "0.1.0" : "Initial Release",
   "0.1.1" : "Adds Support for Kernl CI",
   "0.2.0" : "Fixes Login Logo, Builds Bootstrap for Dashboard Widgets, Removes Support for Nav Walker",
-  "0.2.1" : "Adds Archive widget back to widget_init"
+  "0.2.1" : "Adds Archive widget back to widget_init",
+  "0.2.2" : "Fixes login logo bug, removes svg upload support"
 }
